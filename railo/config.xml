@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <info>
+    <type>web</type>
+    <id>c9c3ba46-f452-4674-a732-d961bd08b3f8</id>
+    <name>cflibsvgtoimage</name>
+    <label>libsvgtoimage for Coldfusion</label>
+    <description>Wrapper around the Batik transcoder library from Apache to be used in your ColdFusion applications.</description>
+    <version>@VERSION@</version>
+    <image>https://raw.github.com/svantroyen/cf-libsvgtoimage/master/railo/libsvgtoimage-logo.png</image>
+    <author>Stéphane Vantroyen</author>
+    <support>https://github.com/svantroyen/cf-libsvgtoimage/issues</support>
+    <created>@RELEASE_DATE@</created>
+  </info>
+</config>
