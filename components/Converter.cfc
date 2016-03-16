@@ -27,6 +27,8 @@
       <cfset transcoder.addTranscodingHint(transcoder.KEY_HEIGHT, javacast("float", arguments.imageHeight * scaleImprovementFactor)) />
       <cfset transcoder.addTranscodingHint(transcoder.KEY_WIDTH, javacast("float", arguments.imageWidth * scaleImprovementFactor)) />
       <cfset transcoder.addTranscodingHint(transcoder.KEY_QUALITY, qualityImprovementFactor) />
+    <cfelseif arguments.imageType eq "pdf">
+      <cfset transcoder = createObject("java", "org.apache.fop.svg.PDFTranscoder").init() />
     <cfelse>
       <cfset transcoder = createObject("java", "org.apache.batik.transcoder.image.PNGTranscoder").init() />
     </cfif>

@@ -1,7 +1,7 @@
 # cf-libsvgtoimage
-Coldfusion wrapper to convert svg images to jpg/png images,with use of Apache Batik library
+Coldfusion wrapper to convert svg images to jpg/png/pdf images,with use of Apache Batik library
 
-__A svg to image (jpg or png) converter library for Coldfusion__
+__A svg to image (jpg, png or pdf) converter library for Coldfusion__
 
 Build on top of the [The Apache™ Batik Project](https://xmlgraphics.apache.org/batik/) from Apache
 
