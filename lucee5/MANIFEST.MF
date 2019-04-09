@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Built-Date: ${ext.release.date}
+release-type: web
+id: "c9c3ba46-f452-4674-a732-d961bd08b3f8"
+version: "${pom.version}"
+name: "cflibsvgtoimage"
+description: "Wrapper around the Batik transcoder library from Apache to be used in your ColdFusion applications."
+author: "Stéphane Vantroyen"
+start-bundles: false

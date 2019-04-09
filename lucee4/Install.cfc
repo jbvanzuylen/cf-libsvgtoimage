@@ -3,14 +3,47 @@
   <cfset variables.name = "cflibsvgtoimage" />
 
   <!--- Libraries --->
-  <cfset variables.libraries = ["avalon-framework-api-4.3.1.jar", "avalon-framework-impl-4.3.1.jar", "batik-all-1.7.jar", "batik-anim-1.7.jar",
-                                  "batik-awt-util-1.7.jar","batik-bridge-1.7.jar","batik-css-1.7.jar","batik-dom-1.7.jar","batik-ext-1.7.jar",
-                                  "batik-gvt-1.7.jar","batik-parser-1.7.jar","batik-script-1.7.jar","batik-svg-dom-1.7.jar","batik-svggen-1.7.jar",
-                                  "batik-transcoder-1.7.jar","batik-util-1.7.jar","batik-xml-1.7.jar","xml-apis-1.3.04.jar","xml-apis-ext-1.3.04.jar",
-                                  "xmlgraphics-commons-2.1.jar"] />
+  <cfset variables.libraries = array(
+    "avalon-framework-api-4.3.1.jar",
+    "avalon-framework-impl-4.3.1.jar",
+    "batik-anim-1.11.jar",
+    "batik-awt-util-1.11.jar",
+    "batik-bridge-1.11.jar",
+    "batik-codec-1.11.jar",
+    "batik-constants-1.11.jar",
+    "batik-css-1.11.jar",
+    "batik-dom-1.11.jar",
+    "batik-ext-1.11.jar",
+    "batik-extension-1.11.jar",
+    "batik-gui-util-1.11.jar",
+    "batik-gvt-1.11.jar",
+    "batik-i18n-1.11.jar",
+    "batik-parser-1.11.jar",
+    "batik-rasterizer-1.11.jar",
+    "batik-rasterizer-ext-1.11.jar",
+    "batik-script-1.11.jar",
+    "batik-slideshow-1.11.jar",
+    "batik-squiggle-1.11.jar",
+    "batik-squiggle-ext-1.11.jar",
+    "batik-svg-dom-1.11.jar",
+    "batik-svgbrowser-1.11.jar",
+    "batik-svggen-1.11.jar",
+    "batik-svgpp-1.11.jar",
+    "batik-svgrasterizer-1.11.jar",
+    "batik-swing-1.11.jar",
+    "batik-transcoder-1.11.jar",
+    "batik-ttf2svg-1.11.jar",
+    "batik-util-1.11.jar",
+    "batik-xml-1.11.jar",
+    "fontbox-2.0.7.jar",
+    "fop-2.3.jar",
+    "xml-apis-1.3.04.jar",
+    "xml-apis-ext-1.3.04.jar",
+    "xmlgraphics-commons-2.3.jar"
+  ) />
 
   <!---
-    Called from Railo to validate values
+    Called from Lucee to validate values
   --->
   <cffunction name="validate" access="public" returntype="void" output="false">
     <cfargument name="error" type="struct" />
@@ -22,7 +55,7 @@
   </cffunction>
 
   <!---
-    Called from Railo to install the extension
+    Called from Lucee to install the extension
   --->
   <cffunction name="install" access="public" returntype="string" output="false">
     <cfargument name="error" type="struct" />
@@ -30,7 +63,7 @@
     <cfargument name="config" type="struct" />
 
     <!--- Defined local variables --->
-    <cfset var serverPath = expandPath('{railo-web-directory}') />
+    <cfset var serverPath = expandPath('{lucee-web-directory}') />
     <cfset var dirPath = "" />
     <cfset var dirContent = "" />
 
@@ -69,7 +102,7 @@
   </cffunction>
 
   <!---
-    Called from Railo to update the extension
+    Called from Lucee to update the extension
   --->
   <cffunction name="update" access="public" returntype="string" output="false">
     <cfargument name="error" type="struct" />
@@ -85,18 +118,16 @@
   </cffunction>
 
   <!---
-    Called from Railo to uninstall the extension
+    Called from Lucee to uninstall the extension
   --->
   <cffunction name="uninstall" access="public" returntype="string" output="false">
     <cfargument name="path" type="string" />
     <cfargument name="config" type="struct" />
 
     <!--- Defined local variables --->
-    <cfset var serverPath = expandPath('{railo-web-directory}') />
+    <cfset var serverPath = expandPath('{lucee-web-directory}') />
     <cfset var dirContent = "" />
     <cfset var library = "" />
-    <cfset var funct = "" />
-    <cfset var tag = "" />
     <cfset var i = 0 />
     <cfset var errors = arrayNew(1) />
     <cfset var message = "" />
