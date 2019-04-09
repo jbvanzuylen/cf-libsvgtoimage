@@ -9,7 +9,7 @@
     <version>${pom.version}</version>
     <image>https://raw.githubusercontent.com/jbvanzuylen/cf-libsvgtoimage/master/logo.png</image>
     <author>Stéphane Vantroyen</author>
-    <support>https://github.com/svantroyen/cf-libsvgtoimage/issues</support>
+    <support>https://github.com/jbvanzuylen/cf-libsvgtoimage/issues</support>
     <created>${ext.release.date}</created>
   </info>
 </config>

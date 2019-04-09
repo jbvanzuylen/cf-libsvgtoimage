@@ -8,7 +8,7 @@ Build on top of the [Batik SVG Toolkit](https://xmlgraphics.apache.org/batik/) f
 
 ### Lucee 4
 
-Download the latest version [here](https://github.com/svantroyen/cf-libsvgtoimage/releases/download/v0.1.0/cf-libsvgtoimage-ext.zip)
+Download the latest version [here](https://github.com/jbvanzuylen/cf-libsvgtoimage/releases/download/v1.0.0/cf-libsvgtoimage-lucee4-ext.zip)
 
 __Install as an extension__
 
