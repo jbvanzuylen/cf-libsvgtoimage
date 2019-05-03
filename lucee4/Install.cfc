@@ -37,6 +37,7 @@
     "batik-xml-1.11.jar",
     "fontbox-2.0.7.jar",
     "fop-2.3.jar",
+    "libsvgtoimage.jar",
     "xml-apis-1.3.04.jar",
     "xml-apis-ext-1.3.04.jar",
     "xmlgraphics-commons-2.3.jar"

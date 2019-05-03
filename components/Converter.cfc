@@ -12,7 +12,7 @@
     <cfargument name="imageWidth" required="true" type="numeric" />
     <cfargument name="imageHeight" required="true" type="numeric" />
 
-    <!--- define local variables --->
+    <!--- Define local variables --->
     <cfset var scaleImprovementFactor = arguments.scaleFactor />
     <cfset var qualityImprovementFactor = javacast("float", arguments.qualityFactor) />
     <cfset var transcoder = "" />
@@ -21,6 +21,7 @@
     <cfset var stream = "" />
     <cfset var output = "" />
 
+    <!--- Create transcoder --->
     <cfif arguments.imageType eq "jpg">
       <cfset transcoder = createObject("java", "org.apache.batik.transcoder.image.JPEGTranscoder").init() />
       <!--- settings for quality improvement --->
@@ -28,12 +29,12 @@
       <cfset transcoder.addTranscodingHint(transcoder.KEY_WIDTH, javacast("float", arguments.imageWidth * scaleImprovementFactor)) />
       <cfset transcoder.addTranscodingHint(transcoder.KEY_QUALITY, qualityImprovementFactor) />
     <cfelseif arguments.imageType eq "pdf">
-      <cfset transcoder = createObject("java", "org.apache.fop.svg.PDFTranscoder").init() />
+      <cfset transcoder = createObject("java", "org.primeoservices.cflibsvgtoimage.CustomPDFTranscoder").init() />
     <cfelse>
       <cfset transcoder = createObject("java", "org.apache.batik.transcoder.image.PNGTranscoder").init() />
     </cfif>
 
-    <!--- convert --->
+    <!--- Convert --->
     <cfset svgPath = createObject("java", "java.io.File").init(arguments.svgFilePath).toURL().toString() />
     <cfset input = createObject("java", "org.apache.batik.transcoder.TranscoderInput").init(svgPath) />
     <cfset stream = createObject("java", "java.io.FileOutputStream").init(arguments.imageFilePath) />
@@ -42,5 +43,4 @@
     <cfset stream.flush() />
     <cfset stream.close() />
   </cffunction>
-
 </cfcomponent>
